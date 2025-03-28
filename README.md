@@ -1,75 +1,87 @@
-🚀 Smart To-Do App
+
+# 🚀 Smart To-Do App
+
 A feature-rich, dynamic, and visually appealing To-Do App built with React, Redux, and Vite. This app is designed to not only manage tasks efficiently but also provide task analytics, real-time weather insights for outdoor activities, and voice-based task input to enhance user experience.
 
-🌟 Features
-Task Management: Add, categorize, prioritize, and delete tasks effortlessly.
+## 🌟 Features
 
-Real-Time Weather 🌦️: Get weather updates for outdoor tasks based on location.
+- Task Management: Add, categorize, prioritize, and delete tasks effortlessly.
 
-Task Progress Analytics 📊: Visual representation of completed vs. pending tasks & priority breakdown.
+- Real-Time Weather 🌦️: Get weather updates for outdoor tasks based on location.
 
-Speech-to-Text Input 🎤: Add tasks using voice commands for hands-free experience. 
+- Task Progress Analytics 📊: Visual representation of completed vs. pending tasks & priority breakdown.
 
-Authentication System 🔒: Secure login system to manage tasks individually.
+- Speech-to-Text Input 🎤: Add tasks using voice commands for hands-free experience. 
 
-Responsive UI 📱: Works seamlessly on mobile, tablet, and desktop.
+- Authentication System 🔒: Secure login system to manage tasks individually.
 
-Persistent Storage 💾: Tasks and authentication status remain saved even after page refresh.
+- Responsive UI 📱: Works seamlessly on mobile, tablet, and desktop.
+
+- Persistent Storage 💾: Tasks and authentication status remain  saved even after page refresh.
 
 
-🚀 Getting Started
+
+## ⚙️ Installation & Setup
+
 Follow these simple steps to set up and run the project on your local machine:
-📦 Prerequisites
-Ensure you have the following installed:
-
-Node.js (>= 16.0) 
-npm or yarn (Comes with Node.js)
-
-⚙️ Installation & Setup
-
+ 
 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/SURANJAN951/todo-app.git
 cd todo-app
-
+```
 2️⃣ Install Dependencies
+```bash
 npm install
+```
+3️⃣ Set Up Weather API (Required for Weather Feature 🌦️)
 
-3️⃣ Set Up Environment Variables
+This app uses the RapidAPI Weather API. Follow these steps:
+
+Create an account on RapidAPI.
+
+Subscribe to the Weather API 
+```
+(Example: weather-api167.p.rapidapi.com).
+```
+
+Get your API Key from the RapidAPI dashboard.
+
 Create a .env file in the root directory and add your API key:
+```bash
 VITE_RAPIDAPI_KEY=your_api_key_here
-
+```
 4️⃣ Run the App
+```bash
 npm run dev
+```
 The app will be live at http://localhost:5173/.
 
-🛠️ Technologies Used
-Technology	         	    Installation
-React	                  	npm create vite@latest
-Redux Toolkit	          	npm install @reduxjs/toolkit react-redux
-React Router	          	 npm install react-router-dom
-MUI (Material-UI)		      npm install @mui/material @emotion/react @emotion/styled
-Redux thunk	             npm i redux-thunk
-Chart.js	                npm install chart.js
-Recharts	                npm install recharts
+## 🛠️ Technologies Used
+React,
+Redux Toolkit,
+```
+npm install @reduxjs/toolkit react-redux
+```
+React Router,
+```
+npm install react-router-dom
+```
+MUI (Material-UI),
+```
+npm install @mui/material @emotion/react @emotion/styled
+```
+Redux Thunk,
+```
+npm install redux-thunk
+```
+Chart.js,
+```
+npm install chart.js
+```
+Recharts,
+```
+npm install recharts
+```
 
-📂 Project Structure
-css
-📦 src
- ┣ 📂 components
- ┃ ┣ 📜 Auth.jsx
- ┃ ┣ 📜 TaskInput.jsx
- ┃ ┣ 📜 TaskList.jsx
- ┃ ┣ 📜 Weather.jsx
- ┃ ┗ 📜 TaskAnalytics.jsx
- ┣ 📂 redux
- ┃ ┣ 📜 store.js
- ┃ ┣ 📜 tasksSlice.js
- ┃ ┣ 📜 authSlice.js
- ┃ ┗ 📜 store.js
- ┣ 📜 App.jsx
- ┣ 📜 main.jsx
- ┗ 📜 index.css
-
-
- 
 
