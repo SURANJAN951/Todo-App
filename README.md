@@ -48,8 +48,8 @@ Technology	         	Installation
 React	                  	npm install react
 Redux Toolkit	          	npm install @reduxjs/toolkit react-redux
 React Router	          	npm install react-router-dom
-MUI (Material-UI)		     npm install @mui/material @emotion/react @emotion/styled
-Axios	                  npm install axios
+MUI (Material-UI)		    npm install @mui/material @emotion/react @emotion/styled
+Redux thunk	                npm i redux-thunk
 Chart.js	               npm install chart.js
 Recharts	               npm install recharts
 
