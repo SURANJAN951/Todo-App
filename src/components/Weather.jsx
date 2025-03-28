@@ -1,67 +1,36 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWeather } from "../redux/weatherSlice"; // Import the Redux Thunk action for fetching weather data
 
 const Weather = ({ location }) => {
-  const [weatherData, setWeatherData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch(); // Initialize Redux dispatch function
+
+  // Extract weather data, loading state, and error from Redux store
+  const { weatherData, loading, error } = useSelector((state) => state.weather);
 
   useEffect(() => {
-    if (!location) return;
+    // Fetch weather data only if location is provided
+    if (location) {
+      dispatch(fetchWeather(location)); // Dispatch async action to fetch weather
+    }
+  }, [dispatch, location]);
 
-    const fetchWeather = async () => {
-      setLoading(true);
-      setError(null);
-
-      const options = {
-        method: "GET",
-        url: "https://weather-api167.p.rapidapi.com/api/weather/forecast",
-        params: {
-          place: location,
-          cnt: "1",
-          units: "metric",
-          type: "three_hour",
-          mode: "json",
-          lang: "en",
-        },
-        headers: {
-          "x-rapidapi-key": import.meta.env.VITE_RAPIDAPI_KEY,
-          "x-rapidapi-host": "weather-api167.p.rapidapi.com",
-          Accept: "application/json",
-        },
-      };
-
-      try {
-        const response = await axios.request(options);
-        console.log("Weather API Response:", response.data); // Debugging ke liye
-        setWeatherData(response.data);
-      } catch (error) {
-        console.error("Weather API Error:", error);
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchWeather();
-  }, [location]);
-
+  // Show loading message while fetching data
   if (loading) return <p>Loading weather...</p>;
-  if (error) return <p>Error: {error.message || "Something went wrong!"}</p>;
+
+  // Display error message if fetching fails
+  if (error) return <p>Error: {error}</p>;
+
+  // Handle case where no weather data is available
+  if (!weatherData || !weatherData.list) return <p>No weather data available.</p>;
 
   return (
     <div>
-      <h4>Weather in {weatherData?.city?.name}</h4>
-      {weatherData?.list?.[0] ? (
-        <p>
-          🌥️ Condition: <strong>{weatherData.list[0].weather[0].description}</strong>
-          🌡️ Temperature: <strong>{weatherData.list[0].main.temp}°C</strong> | 
-        </p>
-      ) : (
-        <p>Temperature data not available</p>
-      )}
+      <h4>Weather in {weatherData.city?.name}</h4>
+      <p>🌥️ Condition: <strong>{weatherData.list[0].weather[0].description}</strong></p>
+      <p>🌡️ Temperature: <strong>{weatherData.list[0].main.temp}°C</strong></p>
     </div>
   );
 };
 
-export default Weather;
+export default Weather; // Export the Weather component for use in other parts of the app

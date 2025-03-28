@@ -10,7 +10,7 @@ const TaskInput = () => {
   const [category, setCategory] = useState("Indoor");
   const [location, setLocation] = useState("");
 
-  // 🎤 Speech Recognition Function
+  //  Speech Recognition Function
   const startListening = () => {
     const recognition = new window.webkitSpeechRecognition() || new window.SpeechRecognition();
     recognition.lang = "en-US";
