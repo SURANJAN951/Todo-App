@@ -19,34 +19,42 @@ Persistent Storage 💾: Tasks and authentication status remain saved even after
 
 🚀 Getting Started
 Follow these simple steps to set up and run the project on your local machine:
-
 📦 Prerequisites
 Ensure you have the following installed:
 
-Node.js (>= 16.0)
-
-npm or yarn
+Node.js (>= 16.0) 
+npm or yarn (Comes with Node.js)
 
 ⚙️ Installation & Setup
-Clone the Repository
-
+1️⃣ Clone the Repository
 
 git clone https://github.com/SURANJAN951/todo-app.git
 cd todo-app
-Install Dependencies
-
+2️⃣ Install Dependencies
 
 npm install
-Set Up Environment Variables Create a .env file in the root directory and add your API key:
+3️⃣ Set Up Environment Variables
+Create a .env file in the root directory and add your API key:
 
 
 VITE_RAPIDAPI_KEY=your_api_key_here
-Run the App
+4️⃣ Run the App
 
 npm run dev
 The app will be live at http://localhost:5173/.
 
+🛠️ Technologies Used
+Technology	         	Installation
+React	                  	npm install react
+Redux Toolkit	          	npm install @reduxjs/toolkit react-redux
+React Router	          	npm install react-router-dom
+MUI (Material-UI)		     npm install @mui/material @emotion/react @emotion/styled
+Axios	                  npm install axios
+Chart.js	               npm install chart.js
+Recharts	               npm install recharts
+
 📂 Project Structure
+css
 📦 src
  ┣ 📂 components
  ┃ ┣ 📜 Auth.jsx
@@ -58,28 +66,10 @@ The app will be live at http://localhost:5173/.
  ┃ ┣ 📜 store.js
  ┃ ┣ 📜 tasksSlice.js
  ┃ ┣ 📜 authSlice.js
- ┃ ┗📜 store.js
+ ┃ ┗ 📜 store.js
  ┣ 📜 App.jsx
  ┣ 📜 main.jsx
  ┗ 📜 index.css
 
-🛠️ Technologies Used
-Frontend: React, Redux, Vite, MUI
+ 
 
-Data Visualization: Chart.js / Recharts
-
-Weather API: RapidAPI
-
-State Management: Redux Toolkit
-
-Speech Recognition: Web Speech API
-
-💡 Future Enhancements
-🔔 Task Reminders: Get notified about upcoming tasks.
-
-📅 Calendar Integration: Sync tasks with Google Calendar.
-
-🌍 Multi-language Support: Expand to different languages.
-
-🎯 Why This Project?
-This To-Do App goes beyond basic task management. With real-time weather, analytics, and voice input, it offers a seamless, interactive, and intelligent way to manage daily activities, making it stand out from traditional to-do lists.
